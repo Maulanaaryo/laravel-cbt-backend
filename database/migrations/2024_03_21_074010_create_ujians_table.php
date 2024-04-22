@@ -22,6 +22,16 @@ return new class extends Migration
             $table->integer('nilai_verbal')->nullable();
             $table->integer('nilai_logika')->nullable();
 
+            // status ujian (start, done)
+            $table->enum('status_angka', ['start', 'done'])->default('start');
+            $table->enum('status_verbal', ['start', 'done'])->default('start');
+            $table->enum('status_logika', ['start', 'done'])->default('start');
+
+            // timer ujian per kategori
+            $table->integer('timer_angka')->nullable();
+            $table->integer('timer_verbal')->nullable();
+            $table->integer('timer_logika')->nullable();
+
             // hasil
             $table->string('hasil')->nullable();
 
